@@ -27,7 +27,7 @@ Ubuntu 시스템 세팅에는 Limo의 통신 포트와 Ydlidar 통신 포트에 
 1. vscode install
 ```
     $ cd ~/
-    $ git clone https://github.com/WeGo-Robotics/upgrade_limo.git
+    $ git clone --recursive https://github.com/WeGo-Robotics/upgrade_limo.git
     $ cd ~/upgrade_limo/system_setting/installVSCode
     $ ./installVSCode.sh
 ```
@@ -41,7 +41,10 @@ Ubuntu 시스템 세팅에는 Limo의 통신 포트와 Ydlidar 통신 포트에 
     $ cd ~/upgrade_limo/system_setting/udev_setting
     $ sudo chmod 777 ./*
     $ ./set_port.sh
+    $ systemctl stop nvgetty
+    $ systemctl disable nvgetty
+    $ reboot
 ```
-
+reboot를 진행 한 후,  ls /dev/ttylimo 와, ls /dev/ydlidar 라는 포트가 뜨게 되면 설정이 잘 된 것입니다.
 
 ### YDLidar SDK 세팅
