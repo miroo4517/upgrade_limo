@@ -13,4 +13,9 @@
 ## Jetson Nano Ubuntu 20.04 설치
 Jetson Nano는 Ubuntu 18.04까지만 지원을 하지만, 비공식 적으로 Ubuntu 20.04를 설치 할 수 있도록 이미지가 있습니다. 다음 링크를 통해서 SD 카드에 Jetson Nano용 SD 카드에 설치해 주시기 바라겠습니다.
 
-    설치 링크: https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image
+    https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image
+
+## ROS2 Foxy 설치
+Ubuntu 20.04를 설치해 주신 후 ROS2 Foxy 버전을 Ubuntu(Debian)으로 설치해 주시면 되시겠습니다. 관련하여 자세한 설치 방법은 다음 링크를 참고해 주시면 감사하겠습니다.
+
+    https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html
