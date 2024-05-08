@@ -58,3 +58,17 @@ Ydlidar SDK를 설치합니다.
     $ sudo make install
 ```
 
+### Limo, Lidar ROS2 Package 세팅
+홈디렉ㅌ리에 Limo와 Lidar ROS2 Package를 세팅하고 빌드합니다.
+
+```
+    $ mkdir -p ~/ros2_ws/src
+    $ cd ~/upgrade_limo/
+    $ mv limo_ros2 ~/ros2_ws/src/
+    $ mv ydlidar_ros2_driver ~/ros2_ws/src/
+    $ cd ~/ros2_ws
+    $ colcon build
+    $ source install/setup.bash
+    $ echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
+```
+
