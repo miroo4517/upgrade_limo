@@ -23,25 +23,25 @@ Ubuntu 20.04를 설치해 주신 후 ROS2 Foxy 버전을 Ubuntu(Debian)으로 �
 ### Ubuntu 시스템 세팅
 Ubuntu 시스템 세팅에는 Limo의 통신 포트와 Ydlidar 통신 포트에 대해서 고정을 하는 방법에, Vscode 및 Nomachine과 같이 쉽게 설치를 진행 할 수 있는 소프트웨어를 설치하는 방법에 대해서 알려드립니다.
 
-```
-1. vscode install
 
+1. vscode install
+```
     $ cd ~/
     $ git clone https://github.com/WeGo-Robotics/upgrade_limo.git
     $ cd ~/upgrade_limo/system_setting/installVSCode
     $ ./installVSCode.sh
-
+```
 2. nomachine install
-
+```
     $ cd ~/upgrade_limo/system_setting
     $ sudo dpkg -i nomachine_8.11.3_3_arm64.deb
-
+```
 3. Port Setting
-
+```
     $ cd ~/upgrade_limo/system_setting/udev_setting
     $ sudo chmod 777 ./*
     $ ./set_port.sh
-
 ```
+
 
 ### YDLidar SDK 세팅
