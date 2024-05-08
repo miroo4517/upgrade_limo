@@ -48,3 +48,13 @@ Ubuntu 시스템 세팅에는 Limo의 통신 포트와 Ydlidar 통신 포트에 
 reboot를 진행 한 후,  ls /dev/ttylimo 와, ls /dev/ydlidar 라는 포트가 뜨게 되면 설정이 잘 된 것입니다.
 
 ### YDLidar SDK 세팅
+Ydlidar SDK를 설치합니다.
+```
+    $ cd ~/upgrade_limo/YDLidar-SDK
+    $ mkdir build
+    $ cd build
+    $ cmake ..
+    $ make -j4
+    $ sudo make install
+```
+
