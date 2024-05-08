@@ -1,0 +1,1 @@
+KERNEL=="ttyTHS1", KERNELS=="70006040.serial", MODE="0777", SYMLINK+="ttylimo"
