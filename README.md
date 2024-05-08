@@ -27,7 +27,7 @@ Ubuntu 시스템 세팅에는 Limo의 통신 포트와 Ydlidar 통신 포트에 
 1. vscode install
 ```
     $ cd ~/
-    $ git clone --recursive https://github.com/WeGo-Robotics/upgrade_limo.git
+    $ git clone https://github.com/WeGo-Robotics/upgrade_limo.git
     $ cd ~/upgrade_limo/system_setting/installVSCode
     $ ./installVSCode.sh
 ```
