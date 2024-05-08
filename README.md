@@ -59,7 +59,7 @@ Ydlidar SDK를 설치합니다.
 ```
 
 ### Limo, Lidar ROS2 Package 세팅
-홈디렉ㅌ리에 Limo와 Lidar ROS2 Package를 세팅하고 빌드합니다.
+홈디렉토리에 Limo와 Lidar ROS2 Package를 세팅하고 빌드합니다.
 
 ```
     $ mkdir -p ~/ros2_ws/src
@@ -72,3 +72,56 @@ Ydlidar SDK를 설치합니다.
     $ echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
 ```
 
+### Limo ROS2 활용
+Limo, Lidar, camera 를 ros2로 제어하고 sensor data를 확인하는 방벙에 대해서 설명합니다.
+1. limo ROS2
+```
+    $ ros2 launch limo_base limo_base.launch.py
+    $ ros2 topic list -t
+```
+![Screenshot from 2024-05-08 17-59-25](https://github.com/WeGo-Robotics/upgrade_limo/assets/150217205/1cbfb950-9467-4a66-961c-905221f75f46)
+
+각각의 topic은 다음을 의미합니다.
+* /cmd_vel: Limo를 제어하는 topic 입니다.
+* /imu: Limo의 Imu 센서 토픽입니다.
+* /limo_status: Limo의 배터리 상태, 모드, 모터 RPM 등을 나타내는 topic입니다.
+
+Limo는 다음과 같이 제어 할 수 있습니다. (직진속도 0.3 회전 속도 0.3)으로 Limo 제어
+```
+    $ ros2 topic pub -r 10 /cmd_vel geometry_msgs/msg/Twist "linear:
+        x: 0.3
+        y: 0.0
+        z: 0.0
+    angular:
+        x: 0.0
+        y: 0.0
+        z: 0.3
+```
+
+2. Lidar ROS2
+```
+    $ ros2 launch ydlidar_ros2_driver ydlidar_launch.py 
+    $ ros2 topic list -t
+```
+
+![Screenshot from 2024-05-08 18-33-19](https://github.com/WeGo-Robotics/upgrade_limo/assets/150217205/5fde5347-f17a-41de-9e2a-67b1e502f8a3)
+
+각각의  토픽은 다음의 의미합니다.
+* /scan: Lidar 센서 데이터
+
+Lidar 토픽은 rviz2를 활용하여 확인 할 수 있습니다.
+![Screenshot from 2024-05-08 18-32-30](https://github.com/WeGo-Robotics/upgrade_limo/assets/150217205/75946c6e-d514-4816-9204-dddc9c6e216f)
+
+3. Camera ROS2
+카메라 데이터의 경우에는 Image Data만 나오게 구성되어 있으며 다음과 같이 실행 할 수 있습니다.
+```
+    $ ros2 run image_tools cam2image 
+    $ ros2 topic list -t
+```
+![Screenshot from 2024-05-08 18-36-19](https://github.com/WeGo-Robotics/upgrade_limo/assets/150217205/25a2a037-45bc-486c-beb0-7d4b06d98e63)
+
+각각의  토픽은 다음의 의미합니다.
+* /image: camera 센서 데이터
+
+Camera data는 rqt_image_view를 통해서 확인 가능합니다.
+![Screenshot from 2024-05-08 18-37-38](https://github.com/WeGo-Robotics/upgrade_limo/assets/150217205/c7d6f124-2b3d-4921-bc2b-bbc8974f4733)
