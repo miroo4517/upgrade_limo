@@ -42,8 +42,13 @@ cd ~/upgrade_limo/
 mv limo_ros2 ~/ros2_ws/src/
 mv ydlidar_ros2_driver ~/ros2_ws/src/
 ```
+
+```
 cd ~/ros2_ws
 colcon build
+```
 
+```
 source install/setup.bash
 echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
+```
