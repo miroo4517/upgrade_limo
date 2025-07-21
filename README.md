@@ -1,3 +1,8 @@
+HW : Jetson Nano
+OS : Qengineering Ubuntu 20.04 Image
+
+Password : jetson
+
 ```
 sudo apt update && sudo apt install curl -y
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
@@ -14,12 +19,11 @@ git clone https://github.com/WeGo-Robotics/upgrade_limo.git
 ```
 
 ```
-cd ~/upgrade_limo/system_setting
 sudo dpkg -i nomachine_9.0.188_11_arm64.deb
 ```
 
 ```
-cd ~/upgrade_limo/system_setting/udev_setting
+cd ~/upgrade_limo/udev_setting
 sudo chmod 777 ./*
 ./set_port.sh
 systemctl stop nvgetty
@@ -37,14 +41,8 @@ sudo make install
 ```
 
 ```
-mkdir -p ~/ros2_ws/src
-cd ~/upgrade_limo/
-mv limo_ros2 ~/ros2_ws/src/
-mv ydlidar_ros2_driver ~/ros2_ws/src/
-```
-
-```
-cd ~/ros2_ws
+mv ~/upgrade_limo/limo_ros2_ws ~/limo_ros2_ws
+cd ~/limo_ros2_ws
 colcon build
 ```
 
