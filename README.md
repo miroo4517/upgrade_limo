@@ -48,5 +48,5 @@ colcon build
 
 ```
 source install/setup.bash
-echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
+echo "source ~/limo_ros2_ws/install/setup.bash" >> ~/.bashrc
 ```
