@@ -19,6 +19,7 @@ git clone https://github.com/WeGo-Robotics/upgrade_limo.git
 ```
 
 ```
+#optional
 sudo dpkg -i nomachine_9.0.188_11_arm64.deb
 ```
 
