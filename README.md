@@ -22,7 +22,8 @@ sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 sudo apt update && sudo apt upgrade -y
 sudo apt install ros-foxy-desktop python3-argcomplete
-source /opt/ros/foxy/setup.bash
+echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
+source ~/.bashrc
 ```
 
 #### Git Repository Clone
@@ -64,8 +65,8 @@ colcon build
 
 #### env variable Setting
 ```
-source install/setup.bash
 echo "source ~/limo_ros2_ws/install/setup.bash" >> ~/.bashrc
+source ~/.bashrc
 ```
 
 Yay! If the steps above have been done properly, your Limo ROS1 Robot have been successfully upgraded to ROS2.
