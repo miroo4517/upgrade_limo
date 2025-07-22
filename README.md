@@ -1,5 +1,9 @@
 ## Upgrade Limo ROS1 Model to ROS2 with Ubuntu 20.04
 
+> [!WARNING]
+> For further ROS2 upgrade, it is recommended to use Docker containers instead of upgrading Jetson Nano, due to its video driver incompatibility on the latest Ubuntu distributions.
+> Please check out https://github.com/dusty-nv/jetson-containers or simillar projects.
+
 #### Prerequisites
 1. Ensure you have an Agilex Limo ROS1 Model with Nvidia Jetson Nano.
 2. Remove the microSD card from Jetson Nano. 4 screws should be removed.
@@ -65,3 +69,4 @@ echo "source ~/limo_ros2_ws/install/setup.bash" >> ~/.bashrc
 ```
 
 Yay! If the steps above have been done properly, your Limo ROS1 Robot have been successfully upgraded to ROS2.
+
