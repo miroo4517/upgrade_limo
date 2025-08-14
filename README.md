@@ -50,7 +50,9 @@ reboot
 
 #### YDLidar SDK Build
 ```
-cd ~/upgrade_limo/YDLidar-SDK/build
+cd ~/upgrade_limo/YDLidar-SDK
+mkdir build
+cd build
 cmake ..
 make -j4
 sudo make install
